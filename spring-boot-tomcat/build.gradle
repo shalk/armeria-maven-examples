@@ -1,0 +1,18 @@
+plugins {
+    alias libs.plugins.spring.boot
+}
+
+dependencies {
+    implementation project(':core')
+    implementation project(':spring:boot3-starter')
+    implementation project(':tomcat10')
+
+    implementation libs.spring.boot3.starter.web
+    annotationProcessor libs.spring.boot3.configuration.processor
+
+    runtimeOnly project(':spring:boot3-actuator-starter')
+
+    testImplementation libs.assertj
+    testImplementation libs.junit5.jupiter.api
+    testImplementation libs.spring.boot3.starter.test
+}

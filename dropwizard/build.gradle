@@ -1,0 +1,20 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass.set('example.dropwizard.DropwizardArmeriaApplication')
+}
+
+dependencies {
+    implementation project(':dropwizard2')
+
+    testImplementation libs.dropwizard2.testing
+    testImplementation libs.junit5.jupiter.api
+}
+
+task runDropwizardExample(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = application.mainClass.get()
+    args = ['server', 'server.yaml']
+}

@@ -1,0 +1,13 @@
+plugins {
+    id 'application'
+}
+
+dependencies {
+    implementation project(':core')
+    implementation project(':rxjava3')
+    runtimeOnly libs.slf4j.simple
+}
+
+application {
+    mainClass.set('example.armeria.contextpropagation.rxjava.Main')
+}
